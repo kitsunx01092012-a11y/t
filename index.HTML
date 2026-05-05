@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket | Temple Gateway</title>
+    <style>
+        body { background: #f0f2f5; font-family: sans-serif; margin: 0; text-align: center; }
+        .hero { background: #0047AB; color: white; padding: 50px 20px; }
+        .pic { width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover; }
+        input { width: 80%; max-width: 400px; padding: 15px; border-radius: 25px; border: none; margin: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; }
+        .card { background: white; padding: 20px; width: 260px; border-radius: 15px; text-decoration: none; color: #1a1a1a; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border: 2px solid #0047AB; }
+        h3 { color: #0047AB; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <img src="https://i.postimg.cc/mrQTpQWj/aniket-jpg.jpg" class="pic" alt="Aniket">
+    <h1>Aniket's Temple Portal</h1>
+    <p>One-click spiritual access</p>
+</div>
+
+<input type="text" id="search" oninput="runSearch()" placeholder="Search temples...">
+
+<div class="grid" id="templeGrid">
+    <a href="https://www.tirumala.org/" class="card"><h3>Tirupati Balaji</h3><span>Andhra Pradesh, India</span></a>
+    <a href="https://shashwatdham.org/" class="card"><h3>Shashwat Dham</h3><span>Nawalparasi, Nepal</span></a>
+    <a href="https://www.shrisiddhivinayak.org/" class="card"><h3>Siddhivinayak</h3><span>Mumbai, India</span></a>
+    <a href="https://vashisthajayanthi.com/" class="card"><h3>Kashi Vishwanath</h3><span>Varanasi, India</span></a>
+    <a href="https://www.goldentempleamritsar.org/" class="card"><h3>Golden Temple</h3><span>Amritsar, India</span></a>
+</div>
+
+<script>
+function runSearch() {
+    let q = document.getElementById('search').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = cards[i].innerText.toLowerCase().includes(q) ? "" : "none";
+    }
+}
+</script>
+
+</body>
+</html>
